@@ -7,6 +7,28 @@
           src="https://cdn.jsdelivr.net/npm/@gradio/lite@latest/dist/lite.js"></script>
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@gradio/lite@latest/dist/lite.css"/>
+  <style>
+a {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  background: linear-gradient(
+    270deg,
+    red, orange, yellow, green, blue, indigo, violet, red
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 6s ease infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+</style>
 </head>
 <body>
 <gradio-lite>
@@ -96,7 +118,7 @@ def update_settings(url, model, key):
 
 with gr.Blocks(title="糖度计") as demo:
     gr.Markdown("# 🍬 糖度计")
-    gr.Markdown("###### forked by rain_x3")
+    gr.Markdown("###### forked by [rain_x3](https://www.luogu.com.cn/user/964072)")
     with gr.Tabs():
         with gr.Tab("检测"):
             food_input = gr.Textbox(label="输入食物名称")
